@@ -1,0 +1,72 @@
+<section>
+    <article class="container profile_table">
+        <table class="table table-bordered table-responsive my-4">
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>location</th>
+                     <th>phonenumber</th>
+                    <th>gender</th>
+                    <th>education</th>
+                    <th>specilization</th>
+                    <th>University</th>
+                    <th>CourseType</th>
+                    <th>YOP</th>
+                    <th>skills</th>
+                    <th>Marks</th>
+                    <th>Details</th>
+
+                </tr>
+            </thead>
+
+            {{#each profile}}
+            <tbody>
+                <tr>
+                    {{#if this.profile_photo}}
+                    <td><img src="{{trimString profile_photo.0.path}}" /></td>
+                    {{else}}
+                    <td>
+                        <img
+                            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+                    </td>
+
+                    {{/if}}
+
+                    <td>{{profile_name}}</td>
+                    <td>{{profile_email}}</td>
+                    <td>{{profile_location}}</td>
+                    <td>{{profile_contact}}</td>
+                    <td>{{profile_gender}}</td>
+                    <td>
+                        {{#each profile_education}}
+                        {{this}}
+                        {{/each}}
+
+                    </td>
+                     <td>
+                          {{#each profile_specilization}}
+                          {{this}}
+                          {{/each}}
+                     </td>
+                      <td>{{profile_university}}</td>
+                       <td>{{profile_coursetype}}</td>
+                       <td>
+                            {{#each profile_yop}}
+                        {{this}}
+                        {{/each}}
+                       </td>
+                        <td>{{profile_skills}}</td>
+                        <td>{{profile_marks}}</td>
+                         
+                  <td><a href="/profile/edit-profile/{{_id}}"><i class="fas fa-edit position-absolute"></i>Edit</a></td>
+                </tr>
+            </tbody>
+
+            {{else}}
+            <h1>No students profile here</h1>
+            {{/each}}
+        </table>
+    </article>
+</section>

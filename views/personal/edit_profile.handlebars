@@ -1,0 +1,122 @@
+<section class="add-profile">
+    <article class="container">
+        <div class="row">
+            <div class="col-md-3  left" >
+                 <h3  class="h3 font-weight-bold text-justify"> Edit Profile</h3>
+            </div>
+<div class="col-md-9 right">
+
+                <form action="/profile/edit-profile/{{editProfile._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_method" value="PUT">
+ 
+                        <div class="col-md-6 photo_block">
+                            <label for="profile_photo">Profile Photo</label>
+                            <input type="file" name="profile_photo" class="form-control my-2 hide_file" required>
+                        </div>
+                        <div class="col-md-6 ">
+                            <label for="profile_name"> Name</label>
+                            <input type="text" value="{{editProfile.profile_name}}" name="profile_name" class="form-control my-2 hide_file" placeholder="Enter your full name" required>
+                        </div>
+                          <div class="col-md-6 ">
+                            <label for="profile_email"> Email</label>
+                            <input type="email" value="{{editProfile.profile_email}}" name="profile_email" class="form-control my-2 hide_file" placeholder="Enter your phone email" required>
+                        </div>
+                         <div class="col-md-6 ">
+                            <label for="profile_contact"> Phone Number</label>
+                            <input type="text" value="{{editProfile.profile_contact}}" name="profile_contact" class="form-control my-2 hide_file" placeholder="Enter your phone numner" required>
+                        </div>
+                          <div class="col-md-6 ">
+                            <label for="profile_location">Location</label>
+                            <input type="text" value="{{editProfile.profile_location}}" name="profile_location" class="form-control my-2 hide_file" placeholder="Enter your phone location" required>
+                        </div>
+
+                       <div class="col-md-6 ">
+                            <label for="profile_gender">Gender</label>
+                            <input type="radio" name="profile_gender" class="form-control my-2 hide_file"  value="male">Male
+                             <input type="radio" name="profile_gender" class="form-control my-2 hide_file" value="female">Female
+                        </div>
+                        <h2>Education</h2>
+                        <div class="col-md-4">
+                        <label for="profile_education">Highest Education</label>
+                         <input type="text" list = "profile_education" name="profile_education" placeholder="Highest Education">
+
+                        <datalist id="profile_education">
+                            <option value="Doctorate/Phd" name="Doctorate/Phd">Doctorate/Phd</option>
+                            <option value="Masters/Post-graduation" name="Masters/Post-graduation">Masters/Post-graduation</option>
+                            <option value="12th" name="12th" >12th</option>
+                            <option value="10th" name="10th">10th</option>
+                            <option value="Below 10th" name="Below 10th">Below 10th</option>
+
+                        </datalist>
+                          </div> 
+                         <br>
+                          <div class="col-md-4">
+                        <label for="profile_specilization">Specilization</label>
+                        <input type="text" list = "profile_specilization" name="profile_specilization"  placeholder="specilization">
+
+                        <datalist id="profile_specilization">
+                            <option value="Aeronauticals" name="Aeronauticals">Aeronauticals</option>
+                            <option value="Automobile" name="Automobile">Automobile</option>
+                            <option value="CS/IS/IT" name="CS/IS/IT" >CS/IS/IT</option>
+                            <option value="Civil" name="Civil">Civil</option>
+                            <option value="EC/EE" name="EC/EE">EC/EE</option>
+                            <option value="Mechanical" name="Mechanical">Mechanical</option>
+
+                        </datalist>
+                          </div> 
+
+                           <div class="col-md-6 ">
+                            <label for="profile_university">University/Institute</label>
+                           <input type="text" value="{{editProfile.profile_university}}" name="profile_university" class="form-control my-2 hide_file" placeholder="Select University/Institute" required>
+                        </div>
+                        <div class="col-md-4 ">
+                            <label for="profile_coursetype">Course Type</label>
+                            <input type="radio" name="profile_coursetype" class="form-control my-2 hide_file"  value="full time">Full Time
+                            <input type="radio" name="profile_coursetype" class="form-control my-2 hide_file" value="part time">Part Time
+                            <input type="radio" name="profile_coursetype" class="form-control my-2 hide_file" value="correspondance/distance learning">Correspondance/Distance learning
+                   
+                    </div>
+
+                     <div class="col-md-4">
+                        <label for="profile_yop">Year of passing</label>
+                        <input type="text" list = "profile_yop" name="profile_yop"  placeholder="Year of passing">
+
+                        <datalist id="profile_yop">
+                            <option value="2020" name="2020">2020</option>
+                            <option value="2019" name="2019">2019</option>
+                            <option value="2018" name="2018T" >2018</option>
+                            <option value="2017" name="2017">2017</option>
+                            <option value="2016" name="2016">2016</option>
+                            <option value="2014" name="2014">2014</option>
+                            <option value="2013" name="2013">2013</option>
+                            <option value="2012" name="2012">2012</option>
+                            <option value="2011" name="2011">2011</option>
+                            <option value="2010" name="2010">2010</option>
+                            <option value="2009" name="2009">2009</option>
+                            <option value="2008" name="2008">2008</option>
+                            <option value="2007" name="2007">2007</option>
+                            <option value="2006" name="2006">2006</option>
+
+                        </datalist>
+                          </div> 
+                         <div class="col-md-6 ">
+                            <label for="profile_marks">Marks</label>
+                            <input type="text" value="{{editProfile.profile_marks}}" name="profile_marks" class="form-control my-2 hide_file" placeholder="Enter your marks" required>
+                        </div>
+                        <div class="col-md-6 ">
+                            <label for="profile_skills">Skills</label>
+                            <input type="text" value="{{editProfile.profile_skills}}" name="profile_skills" class="form-control my-2 hide_file" placeholder="Enter your skills" required>
+                        </div>
+                        
+                         <div class="col-md-12">
+                            <button class="btn btn-success float-right" type="submit">Edit Profile</button>
+                        </div>
+
+
+    </form>
+</div>
+           
+        </div>
+
+    </article>
+</section>

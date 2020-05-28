@@ -1,0 +1,45 @@
+<section class="add-job">
+    <article class="container">
+        <div class="row">
+            <div class="col-md-3  left" >
+                 <h3  class="h3 font-weight-bold text-justify">Add Job</h3>
+            </div>
+<div class="col-md-9 right">
+
+    <form action="/job/create-jobs" method="POST"  enctype="multipart/form-data">
+ 
+                       
+                        <div class="col-md-6 ">
+                            <label for="job_title"> Job Title</label>
+                            <input type="text" name="job_title" class="form-control my-2 hide_file" placeholder="Enter job title" required>
+                        </div>
+                          <div class="col-md-6 ">
+                            <label for="job_company">Company Name</label>
+                            <input type="text" name="job_company" class="form-control my-2 hide_file" placeholder="Enter company name" required>
+                        </div>
+                         <div class="col-md-6 ">
+                            <label for="job_experience"> Experience</label>
+                            <input type="text" name="job_experience" class="form-control my-2 hide_file" placeholder="Enter your phone expreience" required>
+                        </div>
+                          <div class="col-md-6 ">
+                            <label for="job_salary">Salary</label>
+                            <input type="text" name="job_salary" class="form-control my-2 hide_file" placeholder="Enter salary" required>
+                        </div>
+                 
+                         <div class="col-md-6 ">
+                            <label for="job_description">Marks</label>
+                            <input type="text" name="job_description" class="form-control my-2 hide_file" placeholder="Enter description" required>
+                        </div>
+                        
+                         <div class="col-md-12">
+                            <button class="btn btn-success float-right" type="submit">Add Job</button>
+                        </div>
+
+
+    </form>
+</div>
+           
+        </div>
+
+    </article>
+</section>
